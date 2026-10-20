@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff4f4">
+  <title>Feliz cumpleaños, Isa 🌷</title>
+  <style>
+    :root { --rose:#c86f8c; --deep:#74475b; --paper:#fffaf8; --pink:#fbe4e8; }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; min-height:100vh; overflow-x:hidden; color:var(--deep);
+      font-family: Georgia, 'Times New Roman', serif;
+      background: radial-gradient(circle at top, #fff 0, #fff4f4 45%, #f8e6eb 100%);
+    }
+    .sky { position:fixed; inset:0; pointer-events:none; overflow:hidden; }
+    .sparkle { position:absolute; color:#d7a1b0; opacity:.7; animation:twinkle 3s ease-in-out infinite; }
+    .flower { position:absolute; font-size:clamp(20px,4vw,34px); opacity:.5; animation:float 9s ease-in-out infinite; }
+    @keyframes twinkle { 0%,100%{opacity:.25; transform:scale(.8)} 50%{opacity:1;transform:scale(1.2)} }
+    @keyframes float { 0%,100%{transform:translateY(0) rotate(-8deg)} 50%{transform:translateY(-18px) rotate(8deg)} }
+    main { position:relative; width:min(760px, calc(100% - 28px)); margin:34px auto; padding:clamp(24px,6vw,54px); text-align:center; background:rgba(255,250,248,.88); border:1px solid #f0d5dd; border-radius:28px; box-shadow:0 18px 55px #8e50641a; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.22em; font:600 11px Arial,sans-serif; color:var(--rose); }
+    h1 { font-size:clamp(42px,9vw,76px); font-weight:400; line-height:1.03; margin:18px 0 12px; }
+    h1 span { color:var(--rose); font-style:italic; }
+    .flower-divider { font-size:24px; letter-spacing:10px; margin:20px 0; }
+    .intro { max-width:500px; margin:0 auto; font-size:clamp(17px,3.8vw,21px); line-height:1.75; }
+    .card { margin:28px auto; padding:24px clamp(16px,4vw,34px); max-width:550px; background:#fff; border:1px solid #f3dce2; border-radius:20px; }
+    .card h2 { margin:0 0 12px; font-size:25px; font-weight:400; font-style:italic; }
+    .poem { font-size:18px; line-height:1.9; white-space:pre-line; }
+    button { border:0; border-radius:999px; padding:15px 25px; background:var(--rose); color:white; font-size:15px; cursor:pointer; box-shadow:0 8px 18px #c86f8c3b; transition:transform .2s, background .2s; }
+    button:hover { transform:translateY(-2px); background:#b65d7b; }
+    button:focus-visible { outline:3px solid #74475b; outline-offset:4px; }
+    .hidden { display:none; }
+    #surprise { margin:25px auto 0; max-width:540px; animation:appear .8s ease both; }
+    #surprise p { font-size:19px; line-height:1.8; }
+    #music-note { margin-top:16px; font:12px Arial,sans-serif; color:#946779; }
+    #player { width:100%; aspect-ratio:16/9; border:0; border-radius:14px; margin-top:14px; }
+    footer { font-size:13px; color:#a07888; margin-top:28px; }
+    @keyframes appear { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation:none!important; transition:none!important; } }
+  </style>
+</head>
+<body>
+  <div class="sky" aria-hidden="true">
+    <span class="sparkle" style="top:12%;left:12%;font-size:20px">✧</span>
+    <span class="sparkle" style="top:27%;right:10%;font-size:24px;animation-delay:1s">✦</span>
+    <span class="sparkle" style="bottom:18%;left:8%;font-size:18px;animation-delay:1.7s">✧</span>
+    <span class="flower" style="top:8%;right:22%">🌷</span>
+    <span class="flower" style="bottom:8%;right:12%;animation-delay:2s">🌸</span>
+    <span class="flower" style="bottom:25%;left:15%;animation-delay:3s">🌼</span>
+  </div>
+  <main>
+    <div class="eyebrow">Un pequeño detalle hecho con cariño</div>
+    <h1>Feliz cumple,<br><span>Isa</span> ♡</h1>
+    <div class="flower-divider" aria-hidden="true">✿ ✧ 🌷 ✧ ✿</div>
+    <p class="intro">Hoy merece celebrarse todo lo bonito que hay en vos: tu forma de sentir, las palabras que encontrás para expresar lo que llevás dentro y esa manera tan tuya de hacer especiales las pequeñas cosas.</p>
+    <section class="card">
+      <h2>Un deseo para tu nuevo año</h2>
+      <div class="poem">Que nunca te falten canciones que te abracen,
+palabras que te ayuden a entenderte,
+pequeñas aventuras que se vuelvan recuerdos
+ni motivos para mirar el mundo con ilusión.
+
+Y que, entre tantas cosas bonitas que das,
+también aprendás a reconocer las que hay en vos. ♡</div>
+    </section>
+    <p style="font-style:italic;font-size:17px">Preparé una pequeña sorpresa para vos…</p>
+    <button id="surpriseBtn" type="button">Abrir sorpresa ✨</button>
+    <section id="surprise" class="hidden" aria-live="polite">
+      <div class="flower-divider">🌸 ♡ 🌸</div>
+      <h2 style="font-size:30px;font-weight:400;font-style:italic">Un recordatorio bonito</h2>
+      <p>Mientras haya tiempo, que nunca nos falten el cariño, la música y las ganas de decirles a las personas importantes lo que significan para nosotros.</p>
+      <p>Que este nuevo capítulo te regale momentos inolvidables. Feliz cumpleaños, Isa. ❤️</p>
+      <div id="music-note">La música se intenta reproducir desde el fragmento elegido. Si el reproductor no carga, podés abrir la canción directamente en YouTube.</div>
+      <div id="playerWrap"></div>
+      <p><a id="youtubeFallback" href="https://www.youtube.com/watch?v=2Y4zvxK0wYM&amp;t=53s" target="_blank" rel="noopener noreferrer" style="color:var(--rose);font-weight:bold">Si no suena, escuchala en YouTube ♫</a></p>
+    </section>
+    <footer>Hecho con HTML, CSS, JavaScript y un poquito de cariño. 🌷</footer>
+  </main>
+  <script>
+    // Al tocar el botón se muestra la sorpresa y se carga el video desde el fragmento deseado.
+    // Si querés ajustar el punto de inicio, cambia START_SECONDS.
+    const VIDEO_ID = '2Y4zvxK0wYM';
+    const START_SECONDS = 53;
+    const button = document.getElementById('surpriseBtn');
+    const surprise = document.getElementById('surprise');
+    const playerWrap = document.getElementById('playerWrap');
+    let opened = false;
+
+    button.addEventListener('click', () => {
+      surprise.classList.remove('hidden');
+      button.textContent = 'Sorpresa abierta ♡';
+      if (!opened) {
+        opened = true;
+        const iframe = document.createElement('iframe');
+        iframe.id = 'player';
+        iframe.title = 'Baile Inolvidable — Bad Bunny';
+        iframe.src = `https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&start=${START_SECONDS}&rel=0&playsinline=1`;
+        iframe.allow = 'autoplay; encrypted-media; picture-in-picture; web-share';
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.loading = 'eager';
+        iframe.allowFullscreen = true;
+        playerWrap.appendChild(iframe);
+      }
+      surprise.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  </script>
+</body>
+</html>
